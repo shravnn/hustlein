@@ -77,7 +77,7 @@ export function SideHustleCard({
       </CardContent>
       <CardFooter>
         {unlocked ? (
-          <Link href={`/learn/${id}`} className="w-full">
+          <Link href="/learning" className="w-full">
             <Button className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full">
               {progress === 0 ? "Start Learning" : progress === 100 ? "Review Again" : "Continue Learning"}
             </Button>

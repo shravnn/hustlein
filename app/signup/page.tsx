@@ -5,8 +5,16 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
+import { useRouter } from "next/router"
 
 export default function SignupPage() {
+  const router = useRouter()
+  
+  const handleSignup = (e) => {
+    e.preventDefault()
+    router.push("/learn")
+  }
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-primary p-4">
       <Link
@@ -59,7 +67,10 @@ export default function SignupPage() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
-          <Button className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full">
+          <Button 
+            className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full"
+            onClick={handleSignup}
+          >
             Sign up
           </Button>
           <div className="text-center text-sm">
